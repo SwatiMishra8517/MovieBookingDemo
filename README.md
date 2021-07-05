@@ -1,3 +1,12 @@
 # MovieBookingDemo
 Movie Booking app codebase project and documents repository
-[*] A movie booking ASP.NET application
+
+Documents
+- Wireframe
+- Database Schema
+- Project Backlog
+
+Project
+- Models
+- Web Pages
+- Controllers
