@@ -1,3 +1,5 @@
+:warning: Models not setup to Code FIrst Approach yet!!!
+
 # MovieBookingDemo
 Movie Booking app codebase project and documents repository
 
