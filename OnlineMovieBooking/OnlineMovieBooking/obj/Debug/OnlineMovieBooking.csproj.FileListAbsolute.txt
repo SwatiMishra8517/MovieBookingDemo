@@ -81,5 +81,3 @@ C:\Users\nikhi\OneDrive\Desktop\MovieBookingDemo\OnlineMovieBooking\OnlineMovieB
 C:\Users\nikhi\OneDrive\Desktop\MovieBookingDemo\OnlineMovieBooking\OnlineMovieBooking\obj\Debug\OnlineMovieBooking.csproj.CopyComplete
 C:\Users\nikhi\OneDrive\Desktop\MovieBookingDemo\OnlineMovieBooking\OnlineMovieBooking\obj\Debug\OnlineMovieBooking.dll
 C:\Users\nikhi\OneDrive\Desktop\MovieBookingDemo\OnlineMovieBooking\OnlineMovieBooking\obj\Debug\OnlineMovieBooking.pdb
-C:\Users\nikhi\OneDrive\Desktop\MovieBookingDemo\OnlineMovieBooking\OnlineMovieBooking\obj\Debug\OnlineMovieBooking.Migrations.MovieDBv1.resources
-C:\Users\nikhi\OneDrive\Desktop\MovieBookingDemo\OnlineMovieBooking\OnlineMovieBooking\obj\Debug\OnlineMovieBooking.csproj.GenerateResource.cache

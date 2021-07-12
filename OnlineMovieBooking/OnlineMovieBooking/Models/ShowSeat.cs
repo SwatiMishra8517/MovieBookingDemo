@@ -12,7 +12,9 @@ namespace OnlineMovieBooking.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ShowSeatId { get; set; }
+        [Required(ErrorMessage = "Please select the status")]
         public string Status { get; set; }
+        [Required(ErrorMessage = "Please enter the Price")]
         public double Price { get; set; }
         public int CinemaSeatId { get; set; }
         public int ShowId { get; set; }

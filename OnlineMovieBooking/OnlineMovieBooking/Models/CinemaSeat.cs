@@ -12,7 +12,9 @@ namespace OnlineMovieBooking.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CinemaSeatId { get; set; }
+        [RegularExpression(@"^[A-Z]{1}[0-9]{2}", ErrorMessage = "Invalid Seat Number")]
         public string SeatNumber { get; set; }
+        [Required(ErrorMessage = "Please enter Seat Type"), MaxLength(30)]
         public int Type { get; set; }
         public int CinemaHallId { get; set; }
 
