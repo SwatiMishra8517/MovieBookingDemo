@@ -14,11 +14,15 @@ namespace OnlineMovieBooking.Models
         public int CinemaSeatId { get; set; }
         [RegularExpression(@"^[A-Z]{1}[0-9]{2}", ErrorMessage = "Invalid Seat Number")]
         public string SeatNumber { get; set; }
-        [Required(ErrorMessage = "Please enter Seat Type"), MaxLength(30)]
+        [Required(ErrorMessage = "Please enter Seat Type")]
         public int Type { get; set; }
         public int CinemaHallId { get; set; }
 
         public virtual CinemaHall CinemaHall { get; set; }
         public virtual ICollection<ShowSeat> Show_Seats { get; set; }
+    }
+    public enum Type
+    {
+
     }
 }

@@ -19,6 +19,7 @@ namespace OnlineMovieBooking.Models
         [DisplayName("Cinema Halls")]
         [Required(ErrorMessage = "Please enter the Total Number of Halls")]
         public int TotalHalls { get; set; }
+        [DisplayName("City Name")]
         [Required(ErrorMessage = "Please enter the Cty ID")]
         public int CityId { get; set; }
 
