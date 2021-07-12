@@ -24,5 +24,6 @@ namespace OnlineMovieBooking.Context
         public DbSet<Payment> Payments { get; set; }
         public DbSet<ShowSeat> ShowSeats { get; set; }
         public DbSet<Show> Shows { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
     }
 }
