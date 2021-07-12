@@ -15,6 +15,7 @@ namespace OnlineMovieBooking.Models
         public int CinemaHallId { get; set; }
         [Required(ErrorMessage = "Please enter hall name"), MaxLength(30)]
         [RegularExpression("^[a-zA-Z0-9 ]*$", ErrorMessage = "Only Alphanumeric allowed")]
+        [DisplayName("Cinema Hall")]
         public string Name { get; set; }
         [DisplayName("Number of Seats")]
         [Required(ErrorMessage = "Please enter the number of seats")]

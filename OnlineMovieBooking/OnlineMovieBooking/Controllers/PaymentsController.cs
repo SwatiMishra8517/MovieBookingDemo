@@ -53,6 +53,7 @@ namespace OnlineMovieBooking.Controllers
         {
             if (ModelState.IsValid)
             {
+                payment.Time = DateTime.Now;
                 db.Payments.Add(payment);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -60,65 +61,6 @@ namespace OnlineMovieBooking.Controllers
 
             ViewBag.BookingId = new SelectList(db.Bookings, "BookingId", "Status", payment.BookingId);
             return View(payment);
-        }
-
-        // GET: Payments/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Payment payment = db.Payments.Find(id);
-            if (payment == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.BookingId = new SelectList(db.Bookings, "BookingId", "Status", payment.BookingId);
-            return View(payment);
-        }
-
-        // POST: Payments/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PaymentId,Amount,Time,DiscountCouponId,RemoteTransactionId,PaymentMethod,BookingId")] Payment payment)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(payment).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.BookingId = new SelectList(db.Bookings, "BookingId", "Status", payment.BookingId);
-            return View(payment);
-        }
-
-        // GET: Payments/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Payment payment = db.Payments.Find(id);
-            if (payment == null)
-            {
-                return HttpNotFound();
-            }
-            return View(payment);
-        }
-
-        // POST: Payments/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Payment payment = db.Payments.Find(id);
-            db.Payments.Remove(payment);
-            db.SaveChanges();
-            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
