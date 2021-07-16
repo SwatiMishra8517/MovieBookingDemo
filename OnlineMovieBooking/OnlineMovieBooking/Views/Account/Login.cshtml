@@ -1,0 +1,52 @@
+﻿@model OnlineMovieBooking.Models.User
+
+@{
+    ViewBag.Title = "Login";
+}
+
+
+
+<style>
+    body {
+        margin: 0;
+        color: #6a6f8c;
+        background: #c8c8c8;
+        font: 600 16px/18px 'Open Sans',sans-serif;
+    }
+
+    form {
+        margin: 0 auto;
+        width: 30vw;
+        height:50vh;
+        border: 1px solid;
+        margin-top:5vh;
+        padding:10% 2% 2% 5%;
+    }
+
+    table, td {
+        padding: 10px;
+    }
+</style>
+
+
+@using (Html.BeginForm())
+{
+    <h2>Login</h2>
+    <table>
+        <tr>
+            <td>user name</td>
+            <td>@Html.TextBoxFor(user => user.Email)</td>
+        </tr>
+        <tr>
+            <td>password</td>
+            <td>@Html.PasswordFor(user => user.Password)</td>
+        </tr>
+    </table>
+    <input type="submit" class="btn btn-primary" value="login" /><br/>
+
+    <span>Don't have an account?</span>
+   @Html.ActionLink("signup", "SignUp")
+
+}
+
+

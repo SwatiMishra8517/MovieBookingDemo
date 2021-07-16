@@ -126,6 +126,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Classes\UserLogin.cs" />
     <Compile Include="Context\MovieContext.cs" />
     <Compile Include="Controllers\BookingsController.cs" />
     <Compile Include="Controllers\CinemaHallsController.cs" />
@@ -137,12 +138,22 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\PaymentsController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Controllers\ShowsController.cs" />
     <Compile Include="Controllers\ShowSeatsController.cs" />
+    <Compile Include="Controllers\UserInterfaceController.cs" />
+    <Compile Include="Controllers\UserLoginController.cs" />
+    <Compile Include="Controllers\UserMovieController.cs" />
+    <Compile Include="Controllers\UserMovieSelectionController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107130754380_DatabaseCreate.cs" />
+    <Compile Include="Migrations\202107130754380_DatabaseCreate.Designer.cs">
+      <DependentUpon>202107130754380_DatabaseCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\Cinema.cs" />
     <Compile Include="Models\CinemaHall.cs" />
@@ -154,6 +165,7 @@
     <Compile Include="Models\Show.cs" />
     <Compile Include="Models\ShowSeat.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -244,10 +256,24 @@
     <Content Include="Views\Feedbacks\Delete.cshtml" />
     <Content Include="Views\Feedbacks\Details.cshtml" />
     <Content Include="Views\Feedbacks\Index.cshtml" />
+    <Content Include="Views\Movie\Index.cshtml" />
+    <Content Include="Views\Movie\FeedBack.cshtml" />
+    <Content Include="Views\Movie\AddFeedBack.cshtml" />
+    <Content Include="Views\Registration\Login.cshtml" />
+    <Content Include="Views\Registration\SignUp.cshtml" />
+    <Content Include="Views\UserInterface\Index.cshtml" />
+    <Content Include="Views\UserLogin\Login.cshtml" />
+    <Content Include="Views\UserLogin\SignUp.cshtml" />
+    <Content Include="Views\UserFilter\Cities.cshtml" />
+    <Content Include="Views\UserMovieSelection\SelectCity.cshtml" />
+    <Content Include="Views\UserMovieSelection\SelectCinemaByCity.cshtml" />
+    <Content Include="Views\UserMovieSelection\SelectShowByCinema.cshtml" />
+    <Content Include="Views\UserMovieSelection\SelectShowByMovie.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\Movies\" />
+    <Folder Include="Views\UserMovie\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -261,6 +287,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202107130754380_DatabaseCreate.resx">
+      <DependentUpon>202107130754380_DatabaseCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

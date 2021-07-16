@@ -1,0 +1,39 @@
+﻿@model OnlineMovieBooking.Classes.UserLogin
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<style>
+    table, td {
+        padding: 10px;
+    }
+</style>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    @using (Html.BeginForm())
+    {
+        <table>
+            <tr>
+                <td>username/email</td>
+                <td>@Html.TextBoxFor(user => user.UserName)</td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>@Html.PasswordFor(user => user.Password)</td>
+            </tr>
+        </table>
+        <input type="submit" class="btn btn-primary" value="Login" />
+
+    }
+    <span>Don't have an account?</span>
+    <br />
+    @Html.ActionLink("signup", "SignUp")
+</body>
+</html>

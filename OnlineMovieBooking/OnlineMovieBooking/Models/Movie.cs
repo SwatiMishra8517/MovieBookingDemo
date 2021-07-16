@@ -34,5 +34,6 @@ namespace OnlineMovieBooking.Models
         public Nullable<DateTime> ReleaseDate { get; set; }
 
         public virtual ICollection<Show> Shows { get; set; }
+        public virtual ICollection<Feedback> Feedbacks { get; set; }
     }
 }

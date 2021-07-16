@@ -40,13 +40,7 @@ namespace OnlineMovieBooking.Controllers
         // GET: Shows/Create
         public ActionResult Create()
         {
-            var cinemahalls = db.CinemaHalls.Select(
-            c => new
-            {
-                CinemaHallId = c.CinemaHallId,
-                Name = c.Cinema.Name + "-" + c.Cinema.City.Name + " (" + c.Name + ")"
-            });
-            ViewBag.CinemaHallId = new SelectList(cinemahalls, "CinemaHallId", "Name");
+            ViewBag.CinemaHallId = new SelectList(db.CinemaHalls, "CinemaHallId", "Name");
             ViewBag.MovieId = new SelectList(db.Movies, "MovieId", "Name");
             return View();
         }
@@ -82,13 +76,7 @@ namespace OnlineMovieBooking.Controllers
             {
                 return HttpNotFound();
             }
-            var cinemahalls = db.CinemaHalls.Select(
-            c => new
-            {
-                CinemaHallId = c.CinemaHallId,
-                Name = c.Cinema.Name + "-" + c.Cinema.City.Name + " (" + c.Name + ")"
-            });
-            ViewBag.CinemaHallId = new SelectList(cinemahalls, "CinemaHallId", "Name", show.CinemaHallId);
+            ViewBag.CinemaHallId = new SelectList(db.CinemaHalls, "CinemaHallId", "Name", show.CinemaHallId);
             ViewBag.MovieId = new SelectList(db.Movies, "MovieId", "Name", show.MovieId);
             return View(show);
         }

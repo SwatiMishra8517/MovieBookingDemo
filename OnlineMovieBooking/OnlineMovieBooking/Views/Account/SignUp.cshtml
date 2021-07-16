@@ -1,0 +1,45 @@
+﻿@model OnlineMovieBooking.Models.User
+
+@{
+    ViewBag.Title = "SignUp";
+}
+<style>
+    table, td {
+        padding: 10px;
+    }
+</style>
+<h2>SignUp</h2>
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>@Html.TextBoxFor(user => user.Name)</td>
+        </tr>
+        <tr>
+            <td>Username</td>
+            <td>@Html.TextBoxFor(user => user.Username)</td>
+        </tr>
+        <tr>
+            <td>Mobile No.</td>
+            <td>@Html.TextBoxFor(user => user.MobileNo)</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>@Html.TextBoxFor(user => user.Email)</td>
+        </tr>
+        <tr>
+            <td>password</td>
+            <td>@Html.PasswordFor(user => user.Password)</td>
+        </tr>
+        <tr>
+            <td>password</td>
+            <td>@Html.PasswordFor(user => user.Password)</td>
+        </tr>
+    </table>
+    <input type="submit" class="btn btn-primary" value="signup" />
+
+}
+
+<span>Have an account?</span>
+@Html.ActionLink("Signin", "Login")

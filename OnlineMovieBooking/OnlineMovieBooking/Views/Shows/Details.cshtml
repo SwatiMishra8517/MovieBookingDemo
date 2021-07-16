@@ -4,9 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Show Details</h2>
+<h2>Details</h2>
 
 <div>
+    <h4>Show</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -14,7 +15,7 @@
         </dt>
 
         <dd>
-            @Model.CinemaHall.Cinema.Name-@Model.CinemaHall.Cinema.City.Name (@Html.DisplayFor(model => model.CinemaHall.Name))
+            @Html.DisplayFor(model => model.CinemaHall.Name)
         </dd>
 
         <dt>
