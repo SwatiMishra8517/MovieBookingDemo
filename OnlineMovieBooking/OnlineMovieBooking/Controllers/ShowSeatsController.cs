@@ -41,14 +41,7 @@ namespace OnlineMovieBooking.Controllers
         public ActionResult Create()
         {
             ViewBag.BookingId = new SelectList(db.Bookings, "BookingId", "Status");
-            var cinemaseats = db.CinemaSeats.Select(
-            c => new
-            {
-                CinemaSeatId = c.CinemaSeatId,
-                Name = c.SeatNumber + "-" + c.CinemaHall.Cinema.Name + " " +c.CinemaHall.Cinema.City.Name + " (" + c.CinemaHall.Name + ")"
-            });
-            ViewBag.CinemaSeatId = new SelectList(cinemaseats, "CinemaSeatId", "Name");
-
+            ViewBag.CinemaSeatId = new SelectList(db.CinemaSeats, "CinemaSeatId", "SeatNumber");
             ViewBag.ShowId = new SelectList(db.Shows, "ShowId", "ShowId");
             return View();
         }

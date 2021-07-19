@@ -17,7 +17,7 @@ namespace OnlineMovieBooking.Models
         [DisplayName("Seat Number")]
         public string SeatNumber { get; set; }
         [Required(ErrorMessage = "Please enter Seat Type")]
-        public int Type { get; set; }
+        public Type Type { get; set; }
         public int CinemaHallId { get; set; }
 
         public virtual CinemaHall CinemaHall { get; set; }
@@ -25,6 +25,8 @@ namespace OnlineMovieBooking.Models
     }
     public enum Type
     {
-
+        Silver,
+        Gold,
+        Platinum
     }
 }

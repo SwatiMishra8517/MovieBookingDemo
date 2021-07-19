@@ -16,10 +16,10 @@ namespace OnlineMovieBooking.Models
         [DisplayName("Number of Seats")]
         [Required(ErrorMessage = "Please enter the number of seats")]
         public int NumberOfSeats { get; set; }
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         [Required(ErrorMessage = "Please select the time")]
         public DateTime Time { get; set; }
-        public string Status { get; set; }
+        public Status Status { get; set; }
         public int UserId { get; set; }
         public int ShowId { get; set; }
 
@@ -27,5 +27,12 @@ namespace OnlineMovieBooking.Models
         public virtual User User { get; set; }
         public virtual ICollection<Payment> Payments { get; set; }
         public virtual ICollection<ShowSeat> ShowSeats { get; set; }
+    }
+
+    public enum Status
+    {
+        Booked,
+        UnBooked,
+        Cancelled
     }
 }

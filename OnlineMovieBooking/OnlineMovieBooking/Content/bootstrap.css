@@ -1336,9 +1336,14 @@ mark,
 .text-muted {
   color: #777777;
 }
+.text-white
+{
+    color:white; 
+}
 .text-primary {
   color: #337ab7;
 }
+
 a.text-primary:hover,
 a.text-primary:focus {
   color: #286090;
