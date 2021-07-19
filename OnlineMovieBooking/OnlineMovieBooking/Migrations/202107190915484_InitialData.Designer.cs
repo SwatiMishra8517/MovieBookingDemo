@@ -7,13 +7,13 @@ namespace OnlineMovieBooking.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class DatabaseCreate : IMigrationMetadata
+    public sealed partial class InitialData : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DatabaseCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialData));
         
         string IMigrationMetadata.Id
         {
-            get { return "202107130754380_DatabaseCreate"; }
+            get { return "202107190915484_InitialData"; }
         }
         
         string IMigrationMetadata.Source

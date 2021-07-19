@@ -1,39 +1,44 @@
 ﻿@model OnlineMovieBooking.Classes.UserLogin
 
 @{
-    Layout = null;
+    Layout = Layout;
 }
 
 <!DOCTYPE html>
-<style>
-    table, td {
-        padding: 10px;
-    }
-</style>
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Login</title>
+    <link href="~/Content/LoginStyle.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <h2>Login</h2>
     @using (Html.BeginForm())
     {
-        <table>
-            <tr>
-                <td>username/email</td>
-                <td>@Html.TextBoxFor(user => user.UserName)</td>
-            </tr>
-            <tr>
-                <td>Password</td>
-                <td>@Html.PasswordFor(user => user.Password)</td>
-            </tr>
-        </table>
-        <input type="submit" class="btn btn-primary" value="Login" />
+        @Html.AntiForgeryToken()
+        <div class="card custom-card login-div">
+            <div class="card-header text-white">
+                <h3 class="text-white">Login</h3>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    @Html.LabelFor(user => user.UserName, new { @class = "text-white" })
+                    @Html.TextBoxFor(user => user.UserName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(user => user.UserName)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "text-white" })
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Password)
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary rounded-0">Login</button><br />
+                    <span class="text-white">Don't have an account?</span>
+                    @Html.ActionLink("signup", "SignUp")
+                </div>
 
+            </div>
+        </div>
     }
-    <span>Don't have an account?</span>
-    <br />
-    @Html.ActionLink("signup", "SignUp")
 </body>
 </html>

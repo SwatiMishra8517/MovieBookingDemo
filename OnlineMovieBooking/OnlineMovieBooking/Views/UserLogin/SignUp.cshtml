@@ -1,7 +1,7 @@
 ﻿@model OnlineMovieBooking.Models.User
 
 @{
-    Layout = null;
+    Layout = Layout;
 }
 
 <!DOCTYPE html>
@@ -10,70 +10,53 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>SignUp</title>
+    <link href="~/Content/LoginStyle.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
-    
-    
-    @using (Html.BeginForm()) 
+
+
+    @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-        
-        <div class="form-horizontal">
-            <h4>User</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                </div>
+        <div class="card custom-card login-div">
+            <div class="card-header text-white">
+                <h3 class="text-white">Signup</h3>
             </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+            <div class="card-body">
+                
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Name, new { @class = "text-white" })
+                    @Html.EditorFor(m => m.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Name)
                 </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.MobileNo, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.MobileNo, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.MobileNo, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Username, new { @class = "text-white" })
+                    @Html.EditorFor(m => m.Username, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Username)
                 </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(m => m.MobileNo, new { @class = "text-white" })
+                    @Html.EditorFor(m => m.MobileNo, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.MobileNo)
                 </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email, new { @class = "text-white" })
+                    @Html.EditorFor(m => m.Email, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Email)
                 </div>
-            </div>
-    
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "text-white" })
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Password)
                 </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary rounded-0">signup</button><br />
+                    <span class="text-white">have an account?</span>
+                    @Html.ActionLink("signin", "Login")
+                </div>
+
             </div>
         </div>
     }
-    
-    <div>
-        @Html.ActionLink("Back to Login", "Login")
-    </div>
 </body>
 </html>

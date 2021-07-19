@@ -149,9 +149,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107130754380_DatabaseCreate.cs" />
-    <Compile Include="Migrations\202107130754380_DatabaseCreate.Designer.cs">
-      <DependentUpon>202107130754380_DatabaseCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202107190915484_InitialData.cs" />
+    <Compile Include="Migrations\202107190915484_InitialData.Designer.cs">
+      <DependentUpon>202107190915484_InitialData.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Booking.cs" />
@@ -173,6 +173,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\LoginStyle.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -289,8 +290,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107130754380_DatabaseCreate.resx">
-      <DependentUpon>202107130754380_DatabaseCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107190915484_InitialData.resx">
+      <DependentUpon>202107190915484_InitialData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
